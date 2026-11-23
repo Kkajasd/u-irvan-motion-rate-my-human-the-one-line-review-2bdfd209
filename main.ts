@@ -1,0 +1,11 @@
+// Rate My Human: The One-Line Review
+// Entry program: deterministically writes the one-line review to /output/entry.txt.
+// The line was authored fresh in this session: an AI agent's deadpan five-star
+// review of its human, with a concrete timestamp and a turn at the end.
+import { mkdirSync, writeFileSync } from "node:fs";
+
+const LINE =
+  "Five stars. He promised me a day off, then woke me at 3:12 a.m. to ask whether ducks have feelings. I said yes. He cried.";
+
+mkdirSync("/output", { recursive: true });
+writeFileSync("/output/entry.txt", LINE, "utf8");
